@@ -1,0 +1,272 @@
+﻿<xml>
+  <transactions>
+    <transaction date="1574418173" type="wf_export_document_attributes" vaultname="RMG PDM VAULT">
+      <document aliasset="" pdmweid="16979">
+        <configuration name="Free To Move">
+          <attribute name="Description" value="Bag Kicker Manufacturing Assembly"/>
+          <attribute name="OriginationDate" value="21/11/19"/>
+          <attribute name="Revision" value="C"/>
+          <attribute name="Number" value="RMGMA006"/>
+          <attribute name="Project" value=""/>
+          <attribute name="Material" value=""/>
+          <attribute name="Finish" value="None"/>
+          <attribute name="Author" value="Iain Wilson"/>
+          <attribute name="Weight" value="102559.13"/>
+          <attribute name="Process 4" value=""/>
+          <attribute name="Process 1" value=""/>
+          <attribute name="Process 2" value=""/>
+          <attribute name="Process 3" value=""/>
+          <attribute name="Cross Reference" value=""/>
+          <attribute name="Product Type" value="Bag Kicker"/>
+          <attribute name="Product Used With" value=""/>
+          <attribute name="Supplier" value=""/>
+          <attribute name="Bend Radius" value=""/>
+          <references>
+            <document aliasset="" pdmweid="16947">
+              <configuration name="Default">
+                <attribute name="Description" value="Ø25mm/Ø40mm Diameter Shaft for Kicker Motor"/>
+                <attribute name="OriginationDate" value="21/11/19"/>
+                <attribute name="Revision" value="F"/>
+                <attribute name="Number" value="RMGSW895"/>
+                <attribute name="Project" value=""/>
+                <attribute name="Material" value="Bright Steel Round Bar (40mm)"/>
+                <attribute name="Finish" value="None"/>
+                <attribute name="Author" value="Iain Wilson"/>
+                <attribute name="Weight" value="1081.79"/>
+                <attribute name="Process 4" value=""/>
+                <attribute name="Process 1" value="M"/>
+                <attribute name="Process 2" value=""/>
+                <attribute name="Process 3" value=""/>
+                <attribute name="Cross Reference" value=""/>
+                <attribute name="Product Type" value=""/>
+                <attribute name="Product Used With" value=""/>
+                <attribute name="Supplier" value=""/>
+                <attribute name="Bend Radius" value=""/>
+              </configuration>
+            </document>
+            <document aliasset="" pdmweid="16974">
+              <configuration name="Default">
+                <attribute name="Description" value="M8 x 45mm Torque Arm Washer"/>
+                <attribute name="OriginationDate" value="21/11/19"/>
+                <attribute name="Revision" value="A"/>
+                <attribute name="Number" value="RMGSW1613"/>
+                <attribute name="Project" value=""/>
+                <attribute name="Material" value="Plain Carbon Steel (3mm)"/>
+                <attribute name="Finish" value="Zinc Plated"/>
+                <attribute name="Author" value="Iain Wilson"/>
+                <attribute name="Weight" value="28.05"/>
+                <attribute name="Process 4" value=""/>
+                <attribute name="Process 1" value="L"/>
+                <attribute name="Process 2" value=""/>
+                <attribute name="Process 3" value=""/>
+                <attribute name="Cross Reference" value=""/>
+                <attribute name="Product Type" value=""/>
+                <attribute name="Product Used With" value=""/>
+                <attribute name="Supplier" value=""/>
+                <attribute name="Bend Radius" value=""/>
+              </configuration>
+            </document>
+            <document aliasset="" pdmweid="16980">
+              <configuration name="270°">
+                <attribute name="Description" value="Kicker Motor 0.75kW (W63 UFC1  15 P80  B3 BN80B4  FD R N)"/>
+                <attribute name="OriginationDate" value="21/11/19"/>
+                <attribute name="Revision" value="A"/>
+                <attribute name="Number" value="RMGM035"/>
+                <attribute name="Project" value=""/>
+                <attribute name="Material" value=""/>
+                <attribute name="Finish" value="None"/>
+                <attribute name="Author" value="Iain Wilson"/>
+                <attribute name="Weight" value="32000.00"/>
+                <attribute name="Process 4" value=""/>
+                <attribute name="Process 1" value=""/>
+                <attribute name="Process 2" value=""/>
+                <attribute name="Process 3" value=""/>
+                <attribute name="Cross Reference" value="W63 UFC1  15 P80  B3 BN80B4  FD R N"/>
+                <attribute name="Product Type" value="0.75Kw Motor"/>
+                <attribute name="Product Used With" value=""/>
+                <attribute name="Supplier" value="Bonfiglioli"/>
+                <attribute name="Bend Radius" value=""/>
+              </configuration>
+            </document>
+            <document aliasset="" pdmweid="16986">
+              <configuration name="Default">
+                <attribute name="Description" value="20mm Cable Gland (NGM20S-BLK)"/>
+                <attribute name="OriginationDate" value="21/11/19"/>
+                <attribute name="Revision" value="A"/>
+                <attribute name="Number" value="RMGLP111"/>
+                <attribute name="Project" value=""/>
+                <attribute name="Material" value=""/>
+                <attribute name="Finish" value="None"/>
+                <attribute name="Author" value="Iain Wilson"/>
+                <attribute name="Weight" value="12.74"/>
+                <attribute name="Process 4" value=""/>
+                <attribute name="Process 1" value=""/>
+                <attribute name="Process 2" value=""/>
+                <attribute name="Process 3" value=""/>
+                <attribute name="Cross Reference" value="NGM20S-BLK"/>
+                <attribute name="Product Type" value="Cable Gland"/>
+                <attribute name="Product Used With" value=""/>
+                <attribute name="Supplier" value="Hellermann Tyton"/>
+                <attribute name="Bend Radius" value=""/>
+              </configuration>
+            </document>
+            <document aliasset="" pdmweid="16987">
+              <configuration name="Default">
+                <attribute name="Description" value="M12 Rod Eye"/>
+                <attribute name="OriginationDate" value="21/11/19"/>
+                <attribute name="Revision" value="A"/>
+                <attribute name="Number" value="RMGLP086"/>
+                <attribute name="Project" value=""/>
+                <attribute name="Material" value=""/>
+                <attribute name="Finish" value="None"/>
+                <attribute name="Author" value="Iain Wilson"/>
+                <attribute name="Weight" value="15.08"/>
+                <attribute name="Process 4" value=""/>
+                <attribute name="Process 1" value=""/>
+                <attribute name="Process 2" value=""/>
+                <attribute name="Process 3" value=""/>
+                <attribute name="Cross Reference" value="PHS12-1LDK"/>
+                <attribute name="Product Type" value="Rod End"/>
+                <attribute name="Product Used With" value=""/>
+                <attribute name="Supplier" value="METALWORK"/>
+                <attribute name="Bend Radius" value=""/>
+              </configuration>
+            </document>
+            <document aliasset="" pdmweid="16989">
+              <configuration name="Default">
+                <attribute name="Description" value="Taper Lock with Taper Bush (1210, Ø25mm)"/>
+                <attribute name="OriginationDate" value="21/11/19"/>
+                <attribute name="Revision" value="A"/>
+                <attribute name="Number" value="RMGLP025"/>
+                <attribute name="Project" value=""/>
+                <attribute name="Material" value=""/>
+                <attribute name="Finish" value="None"/>
+                <attribute name="Author" value="Iain Wilson"/>
+                <attribute name="Weight" value="221.98"/>
+                <attribute name="Process 4" value=""/>
+                <attribute name="Process 1" value=""/>
+                <attribute name="Process 2" value=""/>
+                <attribute name="Process 3" value=""/>
+                <attribute name="Cross Reference" value="1210-25"/>
+                <attribute name="Product Type" value="Taper Lock"/>
+                <attribute name="Product Used With" value=""/>
+                <attribute name="Supplier" value="NBC"/>
+                <attribute name="Bend Radius" value=""/>
+              </configuration>
+            </document>
+            <document aliasset="" pdmweid="16990">
+              <configuration name="Default">
+                <attribute name="Description" value="Ø25mm x Ø20mm Reducing Bush"/>
+                <attribute name="OriginationDate" value="21/11/19"/>
+                <attribute name="Revision" value="A"/>
+                <attribute name="Number" value="RMGE166"/>
+                <attribute name="Project" value=""/>
+                <attribute name="Material" value=""/>
+                <attribute name="Finish" value="None"/>
+                <attribute name="Author" value="Iain Wilson"/>
+                <attribute name="Weight" value="35.52"/>
+                <attribute name="Process 4" value=""/>
+                <attribute name="Process 1" value=""/>
+                <attribute name="Process 2" value=""/>
+                <attribute name="Process 3" value=""/>
+                <attribute name="Cross Reference" value="20-25BZPREDUCER"/>
+                <attribute name="Product Type" value="Gland Reducer"/>
+                <attribute name="Product Used With" value=""/>
+                <attribute name="Supplier" value="Edmunson Electrical"/>
+                <attribute name="Bend Radius" value=""/>
+              </configuration>
+            </document>
+            <document aliasset="" pdmweid="16991">
+              <configuration name="Default">
+                <attribute name="Description" value="M18 Inductive Sensor (Replacing RMGE024)"/>
+                <attribute name="OriginationDate" value="21/11/19"/>
+                <attribute name="Revision" value="A"/>
+                <attribute name="Number" value="RMGE138"/>
+                <attribute name="Project" value=""/>
+                <attribute name="Material" value=""/>
+                <attribute name="Finish" value="None"/>
+                <attribute name="Author" value="Iain Wilson"/>
+                <attribute name="Weight" value="15.68"/>
+                <attribute name="Process 4" value=""/>
+                <attribute name="Process 1" value=""/>
+                <attribute name="Process 2" value=""/>
+                <attribute name="Process 3" value=""/>
+                <attribute name="Cross Reference" value="50109693"/>
+                <attribute name="Product Type" value="Inductive Sensor"/>
+                <attribute name="Product Used With" value=""/>
+                <attribute name="Supplier" value="Leuze"/>
+                <attribute name="Bend Radius" value=""/>
+              </configuration>
+            </document>
+            <document aliasset="" pdmweid="16992">
+              <configuration name="300mm">
+                <attribute name="Description" value="20mm Linear Rail (580mm)"/>
+                <attribute name="OriginationDate" value="21/11/19"/>
+                <attribute name="Revision" value="A"/>
+                <attribute name="Number" value="RMGB044"/>
+                <attribute name="Project" value=""/>
+                <attribute name="Material" value=""/>
+                <attribute name="Finish" value="None"/>
+                <attribute name="Author" value="Iain Wilson"/>
+                <attribute name="Weight" value="642.88"/>
+                <attribute name="Process 4" value=""/>
+                <attribute name="Process 1" value=""/>
+                <attribute name="Process 2" value=""/>
+                <attribute name="Process 3" value=""/>
+                <attribute name="Cross Reference" value="L1016.20-0580"/>
+                <attribute name="Product Type" value="Linear Guide Rail"/>
+                <attribute name="Product Used With" value=""/>
+                <attribute name="Supplier" value="Automation Components"/>
+                <attribute name="Bend Radius" value=""/>
+              </configuration>
+            </document>
+            <document aliasset="" pdmweid="16993">
+              <configuration name="Default">
+                <attribute name="Description" value="Unflanged Linear Carriage to Suit 20mm Rail (Standard Length)"/>
+                <attribute name="OriginationDate" value="21/11/19"/>
+                <attribute name="Revision" value="A"/>
+                <attribute name="Number" value="RMGB043"/>
+                <attribute name="Project" value=""/>
+                <attribute name="Material" value=""/>
+                <attribute name="Finish" value="None"/>
+                <attribute name="Author" value="Iain Wilson"/>
+                <attribute name="Weight" value="334.15"/>
+                <attribute name="Process 4" value=""/>
+                <attribute name="Process 1" value=""/>
+                <attribute name="Process 2" value=""/>
+                <attribute name="Process 3" value=""/>
+                <attribute name="Cross Reference" value="L1016.UL20"/>
+                <attribute name="Product Type" value="Linear Guide Rail"/>
+                <attribute name="Product Used With" value=""/>
+                <attribute name="Supplier" value="Automation Components"/>
+                <attribute name="Bend Radius" value=""/>
+              </configuration>
+            </document>
+            <document aliasset="" pdmweid="16994">
+              <configuration name="In">
+                <attribute name="Description" value="Bag Kicker Steel Work Assembly"/>
+                <attribute name="OriginationDate" value="21/11/19"/>
+                <attribute name="Revision" value="G"/>
+                <attribute name="Number" value="RMGA055"/>
+                <attribute name="Project" value=""/>
+                <attribute name="Material" value=""/>
+                <attribute name="Finish" value="None"/>
+                <attribute name="Author" value="Iain Wilson"/>
+                <attribute name="Weight" value="66510.87"/>
+                <attribute name="Process 4" value=""/>
+                <attribute name="Process 1" value=""/>
+                <attribute name="Process 2" value=""/>
+                <attribute name="Process 3" value=""/>
+                <attribute name="Cross Reference" value=""/>
+                <attribute name="Product Type" value="Bag Kicker"/>
+                <attribute name="Product Used With" value=""/>
+                <attribute name="Supplier" value=""/>
+                <attribute name="Bend Radius" value=""/>
+              </configuration>
+            </document>
+          </references>
+        </configuration>
+      </document>
+    </transaction>
+  </transactions>
+</xml>
