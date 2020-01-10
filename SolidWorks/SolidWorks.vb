@@ -6,6 +6,9 @@
 '     Changes to this file may cause incorrect behavior and will be lost if
 '     the code is regenerated.
 ' </auto-generated>
+' "C:\Program Files\Microsoft SDKs\Windows\v6.0A\Bin\x64\xsd.exe" -lvb 
+' "\\walrus\nas\PriorityMobile\Server\mefAPI\handlers\SolidWorks\SolidWorks\Resources\solidworks.xsd" 
+' /out: "\\walrus\nas\PriorityMobile\Server\mefAPI\handlers\SolidWorks\SolidWorks" /c
 '------------------------------------------------------------------------------
 
 Option Strict Off
@@ -176,9 +179,9 @@ End Class
 Partial Public Class xmlTransactionsTransactionDocumentConfiguration
     
     Private attributeField() As xmlTransactionsTransactionDocumentConfigurationAttribute
-    
-    Private referencesField() As xmlTransactionsTransactionDocumentConfigurationDocument
-    
+
+    Private referencesField() As xmlTransactionsTransactionDocument 'ConfigurationDocument
+
     Private nameField As String
     
     '''<remarks/>
@@ -191,18 +194,18 @@ Partial Public Class xmlTransactionsTransactionDocumentConfiguration
             Me.attributeField = value
         End Set
     End Property
-    
+
     '''<remarks/>
-    <System.Xml.Serialization.XmlArrayItemAttribute("document", IsNullable:=false)>  _
-    Public Property references() As xmlTransactionsTransactionDocumentConfigurationDocument()
+    <System.Xml.Serialization.XmlArrayItemAttribute("document", IsNullable:=False)>
+    Public Property references() As xmlTransactionsTransactionDocument() 'ConfigurationDocument()
         Get
             Return Me.referencesField
         End Get
         Set
-            Me.referencesField = value
+            Me.referencesField = Value
         End Set
     End Property
-    
+
     '''<remarks/>
     <System.Xml.Serialization.XmlAttributeAttribute()>  _
     Public Property name() As String

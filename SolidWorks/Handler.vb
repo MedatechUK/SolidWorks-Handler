@@ -27,10 +27,11 @@ Public Class SolidWorks : Inherits iHandler : Implements xmlHandler
                 )
             )
         End With
+
     End Sub
 
     ''' <summary>
-    ''' Overrides XML handler with a StreamReader for business object parsing.
+    ''' Overrides XML handler w ith a StreamReader for business object parsing.
     ''' </summary>
     ''' <param name="w"></param>
     ''' <param name="Request"></param>
@@ -39,39 +40,72 @@ Public Class SolidWorks : Inherits iHandler : Implements xmlHandler
         Dim s As New XmlSerializer(GetType(xml))
         Dim o As xml = s.Deserialize(Request)
 
-        With o.transactions.transaction.document
-            Debug.Print(.pdmweid)
+        With o.transactions.transaction
+            CheckPart(.document)
+            For Each document In .document.configuration.references
+                CheckPart(document)
 
-            With .configuration
-                For Each a In .attribute
-                    Select Case a.name.ToLower
-                        Case ""
-                            Debug.Print(a.value)
+            Next
 
-                    End Select
-                Next
+        End With
 
-                For Each sublevel In .references
-                    With sublevel
-                        Debug.Print(.pdmweid)
+        With w
+            .WriteStartElement("response")
+            .WriteAttributeString("status", CStr(200))
+            .WriteAttributeString("bubbleid", BubbleID)
+            .WriteAttributeString("message", "OK")
+            .WriteEndElement() 'End Settings 
 
-                        With .configuration
-                            For Each a In .attribute
-                                Select Case a.name.ToLower
-                                    Case ""
-                                        Debug.Print(a.value)
+        End With
 
-                                End Select
-                            Next
-                        End With
+    End Sub
 
-                    End With
+    Private Sub CheckPart(ByRef doc As xmlTransactionsTransactionDocument)
 
-                Next
+        Debug.Print(doc.pdmweid)
+
+        Using F As New PriBase.PART(
+            Assembly.Load(
+                "PriBase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+            )
+        )
+            With F
+                With .AddRow()
+                    For Each a In doc.configuration.attribute
+                        Select Case a.name.ToLower
+                            Case "document pdmweid"
+                            Case "originationdate"
+                            Case "revision"
+                            Case "number"
+                                .PARTNAME = a.value
+                            Case "description"
+                                .PARTDES = a.value
+                            Case "project"
+                            Case "material"
+                            Case "finish"
+                            Case "author"
+                            Case "weight"
+                            Case "process 4"
+                            Case "process 1"
+                            Case "process 2"
+                            Case "process 3"
+                            Case "cross reference"
+                            Case "product type"
+                            Case "product used with"
+                            Case "supplier"
+                            Case "bend radius"
+
+
+                        End Select
+                    Next
+
+                    If Not .Get() Then .Post()
+
+                End With
 
             End With
 
-        End With
+        End Using
 
     End Sub
 
