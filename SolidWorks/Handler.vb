@@ -41,11 +41,10 @@ Public Class SolidWorks : Inherits iHandler : Implements xmlHandler
         Dim o As xml = s.Deserialize(Request)
 
         With o.transactions.transaction
-            CheckPart(.document)
             For Each document In .document.configuration.references
                 CheckPart(document)
-
             Next
+            CheckPart(.document)
 
         End With
 
@@ -99,57 +98,32 @@ Public Class SolidWorks : Inherits iHandler : Implements xmlHandler
                         End Select
                     Next
 
-                    If Not .Get() Then .Post()
+                    If Not doc.configuration.references Is Nothing Then
+                        For Each document In doc.configuration.references
+                            With .PARTARC.AddRow
+                                For Each a In document.configuration.attribute
+                                    Select Case a.name.ToLower
+                                        Case "number"
+                                            .SONNAME = a.value
+                                            .SONQUANT = 1
+                                            .ACTNAME = "Issue"
+                                            .SONACTNAME = "Issue"
+                                    End Select
+                                Next
+
+                            End With
+                        Next
+
+                    End If
 
                 End With
+
+                .Post()
 
             End With
 
         End Using
 
     End Sub
-
-    '''' <summary>
-    '''' Overrides XML handler with an XML document for manual parsing.
-    '''' </summary>
-    '''' <param name="w">The response stream as a XmlTextWriter</param>
-    '''' <param name="Request">The request as an XmlDocument</param>
-    'Public Overrides Sub XMLHandler(ByRef w As XmlTextWriter, ByRef Request As XmlDocument)
-
-    '    'log.LogData.AppendFormat("Running in company {0}.", requestEnv).AppendLine()
-
-    '    'Using F As New CUSTOMERS(Assembly.GetExecutingAssembly)
-    '    '    With F
-    '    '        With .AddRow()
-    '    '            .CUSTNAME = "TQ000043"
-    '    '            .BUSINESSTYPE = "BusType"
-    '    '            .OWNERLOGIN = "SimonB"
-    '    '            .CREATEDDATE = Now
-
-    '    '            If Not .Get() Then Throw .Exception
-
-    '    '            With .CUSTPERSONNEL.AddRow
-    '    '                .NAME = "Joe Bloggs"
-    '    '                .AGENTCODE = "007"
-    '    '                .CIVFLAG = "N"
-
-    '    '                If .Post Then
-
-    '    '                End If
-
-    '    '            End With
-
-    '    '            .ADDRESS3 = "test"
-    '    '            If .Patch() Then
-
-    '    '            End If
-
-    '    '        End With
-
-    '    '    End With
-
-    '    'End Using
-
-    'End Sub
 
 End Class

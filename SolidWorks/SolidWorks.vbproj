@@ -48,10 +48,6 @@
       <HintPath>..\..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PriBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\nas\PriorityMobile\Server\PriProc6\api\web\bin\PriBase.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
@@ -125,6 +121,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Query.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\pribase\PriBase.vbproj">
+      <Project>{b2d762a3-17fc-4232-bf66-10a3963a3e30}</Project>
+      <Name>PriBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

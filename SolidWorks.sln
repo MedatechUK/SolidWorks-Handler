@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SolidWorks", "SolidWorks\SolidWorks.vbproj", "{1AFDB85E-266E-40F1-B325-534B8AEE0510}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PriBase", "..\..\pribase\API Handler Project1\PriBase.vbproj", "{B2D762A3-17FC-4232-BF66-10A3963A3E30}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PriBase", "..\..\pribase\PriBase.vbproj", "{B2D762A3-17FC-4232-BF66-10A3963A3E30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
