@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.106
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EC674683-6A39-4D3F-AE83-51E5E04653E1}"
 	ProjectSection(SolutionItems) = preProject
@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SolidWorks", "SolidWorks\SolidWorks.vbproj", "{1AFDB85E-266E-40F1-B325-534B8AEE0510}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PriBase", "..\..\pribase\PriBase.vbproj", "{B2D762A3-17FC-4232-BF66-10A3963A3E30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +20,6 @@ Global
 		{1AFDB85E-266E-40F1-B325-534B8AEE0510}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AFDB85E-266E-40F1-B325-534B8AEE0510}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AFDB85E-266E-40F1-B325-534B8AEE0510}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B2D762A3-17FC-4232-BF66-10A3963A3E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2D762A3-17FC-4232-BF66-10A3963A3E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2D762A3-17FC-4232-BF66-10A3963A3E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2D762A3-17FC-4232-BF66-10A3963A3E30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,7 +4,8 @@ Imports Newtonsoft.Json
 Imports System.Web
 Imports System.IO
 Imports System.Reflection
-Imports PriPROC6.Interface.Web
+Imports MedatechUK.Web
+Imports MedatechUK.oData
 Imports System.Xml.Serialization
 
 <Export(GetType(xmlHandler))>
@@ -41,11 +42,9 @@ Public Class SolidWorks : Inherits iHandler : Implements xmlHandler
         Dim o As xml = s.Deserialize(Request)
 
         With o.transactions.transaction
-            For Each document In .document.configuration.references
-                CheckPart(document)
+            For Each D As document In .document
+                recurse(D)
             Next
-            CheckPart(.document)
-
         End With
 
         With w
@@ -59,64 +58,58 @@ Public Class SolidWorks : Inherits iHandler : Implements xmlHandler
 
     End Sub
 
-    Private Sub CheckPart(ByRef doc As xmlTransactionsTransactionDocument)
+    Private Sub recurse(ByRef d As document)
 
-        Debug.Print(doc.pdmweid)
+        If Not d.configuration.references Is Nothing Then
+            For Each sd As document In d.configuration.references
+                recurse(sd)
+            Next
+        End If
 
-        Using F As New PriBase.PART(
-            Assembly.Load(
-                "PriBase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-            )
-        )
+        Using F As New Loading("SW", AddressOf logHandler)
             With F
-                With .AddRow()
-                    For Each a In doc.configuration.attribute
-                        Select Case a.name.ToLower
-                            Case "document pdmweid"
-                            Case "originationdate"
-                            Case "revision"
-                            Case "number"
-                                .PARTNAME = a.value
-                            Case "description"
-                                .PARTDES = a.value
-                            Case "project"
-                            Case "material"
-                            Case "finish"
-                            Case "author"
-                            Case "weight"
-                            Case "process 4"
-                            Case "process 1"
-                            Case "process 2"
-                            Case "process 3"
-                            Case "cross reference"
-                            Case "product type"
-                            Case "product used with"
-                            Case "supplier"
-                            Case "bend radius"
+                With .AddRow(1)
+                    '.REVNAME = d.configuration.revision
+                    '.PARTNAME = d.configuration.number
+                    '.PARTDES = d.configuration.description
+                    '.SPEC1 = d.configuration.finish
+                    '.SPEC2 = d.configuration.material
+                    '.SPEC3 = d.configuration.weight
+                    '.SPEC4 = d.configuration.process_4
+                    '.SPEC5 = d.configuration.process_1
+                    '.SPEC6 = d.configuration.process_2
+                    '.SPEC7 = d.configuration.process_3
+                    '.SPEC8 = d.configuration.product_type
+                    '.SPEC9 = d.configuration.supplier
 
-
-                        End Select
-                    Next
-
-                    If Not doc.configuration.references Is Nothing Then
-                        For Each document In doc.configuration.references
-                            With .PARTARC.AddRow
-                                For Each a In document.configuration.attribute
-                                    Select Case a.name.ToLower
-                                        Case "number"
-                                            .SONNAME = a.value
-                                            .SONQUANT = 1
-                                            .ACTNAME = "Issue"
-                                            .SONACTNAME = "Issue"
-                                    End Select
-                                Next
-
-                            End With
-                        Next
-
-                    End If
+                    .TEXT1 = d.configuration.revision
+                    .TEXT2 = d.configuration.number
+                    .TEXT3 = d.configuration.description
+                    .TEXT4 = d.configuration.finish
+                    .TEXT5 = d.configuration.material
+                    .TEXT6 = d.configuration.weight
+                    .TEXT7 = d.configuration.process_4
+                    .TEXT8 = d.configuration.process_1
+                    .TEXT9 = d.configuration.process_2
+                    .TEXT10 = d.configuration.process_3
+                    .TEXT11 = d.configuration.product_type
+                    .TEXT12 = d.configuration.supplier
 
                 End With
+
+                If Not d.configuration.references Is Nothing Then
+                    For Each s In d.configuration.references
+                        With .AddRow(2)
+                            '.ACTNAME = "Issue"
+                            '.SONACTNAME = "Issue"
+                            .TEXT13 = s.configuration.number
+                            .REAL1 = s.configuration.Reference_Count
+                            '.SONREVNAME = s.configuration.revision
+
+                        End With
+
+                    Next
+                End If
 
                 .Post()
 
@@ -125,5 +118,22 @@ Public Class SolidWorks : Inherits iHandler : Implements xmlHandler
         End Using
 
     End Sub
+
+    ''' <summary>
+    ''' Handles oData logging.
+    ''' oData events are fired into this method by instantiating the loading with 
+    ''' an event handler.
+    ''' </summary>
+    ''' <param name="sender">The calling object</param>
+    ''' <param name="e">The log arguments</param>
+    Private Sub logHandler(sender As Object, e As LogArgs)
+        log.LogData.AppendFormat("{0}", e.Message).AppendLine()
+        If e.isException Then
+            log.EntryType = LogEntryType.FailureAudit
+
+        End If
+
+    End Sub
+
 
 End Class

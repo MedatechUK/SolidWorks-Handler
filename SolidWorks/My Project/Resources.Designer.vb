@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -84,21 +84,39 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         '''&lt;xs:schema attributeFormDefault=&quot;unqualified&quot; elementFormDefault=&quot;qualified&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-        '''  &lt;xs:element name=&quot;xml&quot;&gt;
+        '''  &lt;xs:element name=&quot;document&quot;&gt;
         '''    &lt;xs:complexType&gt;
         '''      &lt;xs:sequence&gt;
-        '''        &lt;xs:element name=&quot;transactions&quot;&gt;
+        '''        &lt;xs:element name=&quot;configuration&quot;&gt;
         '''          &lt;xs:complexType&gt;
         '''            &lt;xs:sequence&gt;
-        '''              &lt;xs:element name=&quot;transaction&quot;&gt;
+        '''              &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;attribute&quot;&gt;
         '''                &lt;xs:complexType&gt;
-        '''                  &lt;xs:sequence&gt;
-        '''                    &lt;xs:element name=&quot;document&quot;&gt;
-        '''                   [rest of string was truncated]&quot;;.
+        '''                  &lt;xs:attribute name=&quot;name&quot; type=&quot;xs:string&quot; use=&quot;required&quot; /&gt;
+        '''       [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property SolidWorks() As String
             Get
                 Return ResourceManager.GetString("SolidWorks", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        '''&lt;xs:schema attributeFormDefault=&quot;unqualified&quot; elementFormDefault=&quot;qualified&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+        '''  &lt;xs:element name=&quot;Root&quot;&gt;
+        '''    &lt;xs:complexType&gt;
+        '''      &lt;xs:sequence&gt;
+        '''        &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;Row&quot;&gt;
+        '''          &lt;xs:complexType&gt;
+        '''            &lt;xs:sequence&gt;
+        '''              &lt;xs:element name=&quot;ID&quot; type=&quot;xs:integer&quot; /&gt;
+        '''              &lt;xs:element name=&quot;DESCRIPTION&quot; type=&quot;xs:string&quot; /&gt;
+        '''              &lt;xs:element name=&quot;MANUFACTURER&quot; type=&quot;xs [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property SolidWorks2() As String
+            Get
+                Return ResourceManager.GetString("SolidWorks2", resourceCulture)
             End Get
         End Property
     End Module
