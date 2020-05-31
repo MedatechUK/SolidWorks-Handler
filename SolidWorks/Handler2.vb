@@ -41,6 +41,24 @@ Public Class SolidWorks2 : Inherits iHandler : Implements xmlHandler
         Dim s As New XmlSerializer(GetType(Root))
         Dim o As Root = s.Deserialize(Request)
 
+        For Each r As RootRow In o.Row
+            Using F As New Loading("SW", AddressOf logHandler)
+                With F
+                    With .AddRow(1)
+                        .TEXT2 = r.PART_NUMBER
+                        .TEXT3 = r.DESCRIPTION
+                        .TEXT12 = r.MANUFACTURER
+
+                    End With
+
+                    .Post()
+
+                End With
+
+            End Using
+
+        Next
+
         Using F As New Loading("SW", AddressOf logHandler)
             With F
                 With .AddRow(1)
