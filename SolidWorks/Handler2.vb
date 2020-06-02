@@ -62,7 +62,7 @@ Public Class SolidWorks2 : Inherits iHandler : Implements xmlHandler
         Using F As New Loading("SW", AddressOf logHandler)
             With F
                 With .AddRow(1)
-                    .TEXT1 = HttpContext.Current.Request.Headers("POST_FILE")
+                    .TEXT1 = Split(HttpContext.Current.Request.Headers("POST_FILE"), ".")(0)
 
                 End With
 
