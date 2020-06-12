@@ -45,8 +45,19 @@ Public Class SolidWorks2 : Inherits iHandler : Implements xmlHandler
             Using F As New Loading("SW", AddressOf logHandler)
                 With F
                     With .AddRow(1)
-                        .TEXT2 = r.PART_NUMBER
-                        .TEXT3 = r.DESCRIPTION
+                        If r.INTERNAL_CODE.Length = 0 Then
+                            .TEXT2 = r.PART_NUMBER
+                        Else
+                            .TEXT2 = r.INTERNAL_CODE
+                            .TEXT4 = r.PART_NUMBER
+                        End If
+
+                        If Len(r.DESCRIPTION) = 0 Then
+                            .TEXT3 = r.PART_NUMBER
+                        Else
+                            .TEXT3 = Left(r.DESCRIPTION, 48)
+                        End If
+
                         .TEXT12 = r.MANUFACTURER
 
                     End With
@@ -62,7 +73,8 @@ Public Class SolidWorks2 : Inherits iHandler : Implements xmlHandler
         Using F As New Loading("SW", AddressOf logHandler)
             With F
                 With .AddRow(1)
-                    .TEXT1 = Split(HttpContext.Current.Request.Headers("POST_FILE"), ".")(0)
+                    .TEXT2 = Split(HttpContext.Current.Request.Headers("POST_FILE"), ".")(0)
+                    .TEXT3 = Split(HttpContext.Current.Request.Headers("POST_FILE"), ".")(0)
 
                 End With
 
